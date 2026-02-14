@@ -20,7 +20,7 @@ export default function Home() {
 
     setLoading(true);
 
-    const res = await fetch("http://127.0.0.1:8000/api/upload", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/upload`, {
       method: "POST",
       body: formData,
     });
@@ -35,16 +35,19 @@ export default function Home() {
 
     setInsightsLoading(true);
 
-    const res = await fetch("http://127.0.0.1:8000/api/generate-insights", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/generate-insights`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          filename: previewData.filename,
+          dataset_summary: previewData.dataset_summary,
+        }),
       },
-      body: JSON.stringify({
-        filename: previewData.filename,
-        dataset_summary: previewData.dataset_summary,
-      }),
-    });
+    );
 
     const data = await res.json();
     setInsights(data.insights);
