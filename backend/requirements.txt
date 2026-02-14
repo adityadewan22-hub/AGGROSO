@@ -9,7 +9,6 @@ pandas==2.3.3
 numpy==2.2.6
 psycopg-binary==3.3.2
 httpx==0.28.1
-openai==1.0.0
 google-ai-generativelanguage==0.6.15
 google-api-core==2.29.0
 google-api-python-client==2.189.0
