@@ -47,19 +47,19 @@ export default function StatusPage() {
   }, []);
 
   return (
-    <div className="p-10 max-w-2xl mx-auto">
+    <div className="min-h-screen bg-black text-white p-10 max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold mb-6">System Status</h1>
 
       {/* Loading */}
       {loading && (
-        <div className="bg-blue-100 border border-blue-300 p-4 rounded">
+        <div className="bg-blue-900/40 border border-blue-600 text-blue-300 p-4 rounded">
           Checking backend status...
         </div>
       )}
 
-      {/* Slow (likely cold start) */}
+      {/* Slow (cold start) */}
       {slow && loading && (
-        <div className="bg-yellow-100 border border-yellow-400 p-4 rounded mt-4">
+        <div className="bg-yellow-900/40 border border-yellow-600 text-yellow-300 p-4 rounded mt-4">
           Backend is starting up (Render free tier cold start). This may take
           ~20 seconds.
         </div>
@@ -67,7 +67,7 @@ export default function StatusPage() {
 
       {/* Error */}
       {error && !loading && (
-        <div className="bg-red-100 border border-red-400 p-4 rounded mt-4">
+        <div className="bg-red-900/40 border border-red-600 text-red-400 p-4 rounded mt-4">
           Backend appears to be unavailable.
         </div>
       )}
