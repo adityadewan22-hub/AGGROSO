@@ -2,6 +2,8 @@ from sqlalchemy import Column, Integer, String, Text, DateTime
 from sqlalchemy.sql import func
 from app.db import Base
 
+# report model for SQLlite
+
 
 class Report(Base):
     __tablename__ = "reports"

@@ -6,6 +6,8 @@ from fastapi.responses import Response
 
 router = APIRouter(prefix="/api", tags=["Report"])
 
+# gives 5 newest reports
+
 
 @router.get("/reports")
 def get_last_reports():
@@ -27,6 +29,9 @@ def get_last_reports():
         db.close()
 
 
+# to get a single report by its ID
+
+
 @router.get("/reports/{report_id}")
 def get_report(report_id: int):
     db = SessionLocal()
@@ -44,6 +49,9 @@ def get_report(report_id: int):
         }
     finally:
         db.close()
+
+
+# to get a markdown file of your insights
 
 
 @router.get("/reports/{report_id}/export")

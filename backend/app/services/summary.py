@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 
+# generated summary to post to the llm instead of csv
+
 
 def generate_dataset_summary(df: pd.DataFrame):
     summary = {

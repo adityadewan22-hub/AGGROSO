@@ -6,6 +6,8 @@ from app.config import settings
 
 router = APIRouter()
 
+# simple health check
+
 
 @router.get("/health")
 def health_check():

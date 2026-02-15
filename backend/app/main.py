@@ -28,8 +28,6 @@ app.add_middleware(
 app.include_router(health.router)
 app.include_router(upload.router)
 app.include_router(insights.router)
-print("REPORTS MODULE:", reports)
-print("HAS ROUTER:", hasattr(reports, "router"))
 app.include_router(reports.router)
 app.include_router(status.router)
 

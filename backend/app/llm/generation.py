@@ -6,6 +6,8 @@ import os
 
 import json
 
+##THIS FUNCTION CALLS GEMINI
+
 
 def call_gemini(prompt: str) -> dict:
     api_key = os.getenv("GEMINI_KEY")

@@ -5,6 +5,8 @@ from app.models.report import Report
 
 router = APIRouter(prefix="/api", tags=["Insights"])
 
+# created metadata instead of pasting entire csv
+
 
 @router.post("/generate-insights")
 def generate(payload: dict):
