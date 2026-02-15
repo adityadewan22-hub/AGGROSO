@@ -13,7 +13,7 @@ export default function ReportsPage() {
 
   const fetchReports = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/reports");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/reports`);
       const data = await res.json();
       setReports(data);
     } catch (err) {
@@ -25,7 +25,9 @@ export default function ReportsPage() {
 
   const fetchReportDetail = async (id: number) => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/reports/${id}`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/reports/${id}`,
+      );
       const data = await res.json();
       setSelectedReport(data);
     } catch (err) {
@@ -80,7 +82,7 @@ export default function ReportsPage() {
               <button
                 onClick={() =>
                   window.open(
-                    `http://127.0.0.1:8000/api/reports/${selectedReport.id}/export`,
+                    `${process.env.NEXT_PUBLIC_API_URL}/api/reports/${selectedReport.id}/export`,
                     "_blank",
                   )
                 }
